@@ -26,7 +26,9 @@ nav button {
 .b5 { margin-left: auto; }  /* empuja el último botón a la derecha */
 
 footer {
-    background-image: url(../../../../Downloads/niñoscorriendo.png);
+    background-image: <img width="600" height="220" alt="niñoscorriendo" src="https://github.com/user-attachments/assets/704d1d93-4e51-4e9b-a332-233a10764eae" />
+
+;
     background-repeat: no-repeat;
     background-position: center bottom;
     background-size: cover;
@@ -64,4 +66,5 @@ h1 {
 }
 footer {
     text-align: center;
+
 }
