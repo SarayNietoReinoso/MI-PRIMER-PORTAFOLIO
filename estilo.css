@@ -1,0 +1,67 @@
+body {
+    background-color: rgba(200,0,100,0.3);
+    
+}
+
+nav {
+    display: flex;          /* activa flexbox para la fila */
+    align-items: center;    /* centra verticalmente */
+    height: 60px;
+    padding: 0 50px;        /* espacio lateral */
+    background-color: rgba(0,0,0,0.05);
+    gap: 40px; /* espacio uniforme entre botones */
+}
+
+nav button {
+    padding: 20px 30px;
+    cursor: pointer;
+    display: inline-block;  /* asegura que no ocupen toda la línea */
+}
+
+/* Distribución personalizada */
+.b1 { margin-left: 60px; }
+.b2 { margin-left: 120px; }
+.b3 { margin-left: 180px; }
+.b4 { margin-left: 240px; }
+.b5 { margin-left: auto; }  /* empuja el último botón a la derecha */
+
+footer {
+    background-image: url(../../../../Downloads/niñoscorriendo.png);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: cover;
+    height: 400px;
+    display: flex;            /* Activamos flexbox */
+    flex-direction: column;   /* Para que los elementos vayan de arriba a abajo */
+    justify-content: flex-end;
+    padding-bottom: 25px;  /* Aumenta este valor para subir el texto */
+    border-radius: 50px 50px 50px 50px; /* esquinas superiores redondeadas */
+    overflow: hidden;
+    mask-image: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0));
+    -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0)); /* para Safari */
+
+} 
+
+.container {
+    display: flex;          /* activa Flexbox */
+    gap: 30px;              /* espacio entre el main y la sidebar */
+    padding: 0;
+}
+
+main {
+    flex: 3;                /* ocupa más espacio */
+}
+
+aside {
+    flex: 1;                /* barra lateral más estrecha */
+    background-color: #e0e0e0;
+    padding: 20px;
+    height: 300px;
+}
+
+h1 {
+    text-align: center;
+}
+footer {
+    text-align: center;
+}
