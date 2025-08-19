@@ -1,64 +1,106 @@
 body {
     background-color: rgba(200,0,100,0.3);
+    font-family: sans-serif;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url("https://i.imgur.com/G5KNkzp.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
     
 }
 
-nav {
-    display: flex;          /* activa flexbox para la fila */
-    align-items: center;    /* centra verticalmente */
-    height: 60px;
-    padding: 0 50px;        /* espacio lateral */
-    background-color: rgba(0,0,0,0.05);
-    gap: 40px; /* espacio uniforme entre botones */
+/* Menú principal */
+nav ul.menu {
+  list-style: none;       /* quitar viñetas */
+  margin: 0;
+  padding: 10px;
+  display: flex;          /* los li en fila */
+  background-color: #e8e8e7;
+  gap: 5px;
 }
 
-nav button {
-    padding: 20px 30px;
-    cursor: pointer;
-    display: inline-block;  /* asegura que no ocupen toda la línea */
+nav ul.menu li {
+  position: relative;     /* necesario para posicionar el submenú */
 }
 
-/* Distribución personalizada */
-.b1 { margin-left: 60px; }
-.b2 { margin-left: 120px; }
-.b3 { margin-left: 180px; }
-.b4 { margin-left: 240px; }
-.b5 { margin-left: auto; }  /* empuja el último botón a la derecha */
+/* Enlaces del menú */
+nav ul.menu li a {
+  text-decoration: none;
+  color: black;
+  padding: 0 20px;
+  display: flex;        /* ocupa todo el área */
+  align-items: center;
+  height: 75px;             /* altura fija igual que el logo, opcional */
+  width: 100px;
+  transition: font-weight 0.2s ease;
+}
+
+nav ul.menu li a:hover {
+  font-weight: bold;
+  background-color: #ddd;
+}
+
+/* Submenús */
+nav ul.submenu {
+  display: none;             /* ocultos por defecto */
+  position: absolute;
+  top: 100%;                 /* justo debajo del padre */
+  left: 0;
+  background-color: #f5f5f5;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  min-width: 160px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+nav ul.submenu li a {
+  padding: 10px 15px;
+  white-space: nowrap;       /* no se rompa el texto */
+}
+
+nav ul.submenu li a:hover {
+  background-color: #ccc;
+}
+
+/* Mostrar submenú SOLO si el li tiene-submenu */
+nav ul.menu li.tiene-submenu:hover > ul.submenu {
+  display: block;
+}
+
+nav ul.menu li a, nav ul.menu li a strong {
+  line-height: 1;  /* evita que <strong> suba el texto */
+}
+
+
+
+.logotipo {
+    background-color: rgb(77, 77, 77);
+    background-image: url("https://i.imgur.com/4xc2jTN.png");
+    background-position: fixed;
+    background-size:cover;
+    background-repeat: no-repeat;
+    height: 75px;
+    width: 150px;
+  
+}
 
 footer {
-    background-image: <img width="600" height="220" alt="niñoscorriendo" src="https://github.com/user-attachments/assets/704d1d93-4e51-4e9b-a332-233a10764eae" />
-
-;
-    background-repeat: no-repeat;
+    background-image: url(../../../../Downloads/niñoscorriendo.png);
+    background-repeat: repeat-x;
     background-position: center bottom;
-    background-size: cover;
-    height: 400px;
+    background-size:contain;
+    height: 50px;
     display: flex;            /* Activamos flexbox */
     flex-direction: column;   /* Para que los elementos vayan de arriba a abajo */
     justify-content: flex-end;
-    padding-bottom: 25px;  /* Aumenta este valor para subir el texto */
-    border-radius: 50px 50px 50px 50px; /* esquinas superiores redondeadas */
+    padding-bottom: 5px;  /* Aumenta este valor para subir el texto */
     overflow: hidden;
-    mask-image: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0));
-    -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0)); /* para Safari */
 
 } 
 
-.container {
-    display: flex;          /* activa Flexbox */
-    gap: 30px;              /* espacio entre el main y la sidebar */
-    padding: 0;
-}
-
 main {
-    flex: 3;                /* ocupa más espacio */
-}
-
-aside {
-    flex: 1;                /* barra lateral más estrecha */
-    background-color: #e0e0e0;
-    padding: 20px;
-    height: 300px;
+    text-align: justify;
+    flex: 3.2
 }
 
 h1 {
@@ -66,5 +108,22 @@ h1 {
 }
 footer {
     text-align: center;
+}
 
+
+@media (max-width: 768px) {
+  .logotipo {
+    width: 100px;
+    height: 50px;
+  }
+
+  nav ul.menu {
+    flex-direction: column;  /* menú en columna */
+    align-items: center;
+  }
+
+  nav ul.menu li a {
+    width: 100%;            /* que ocupen todo el ancho */
+    text-align: center;
+  }
 }
